@@ -1,0 +1,20 @@
+version: '2'
+services:
+  web:
+    build: .
+    environment:
+      - MONGO_PATH=mongodb://db-mongo:27017
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on: 
+      - db-mongo
+  db-mongo:
+    image: mongo
+    command: --smallfiles
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
