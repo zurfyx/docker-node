@@ -13,6 +13,7 @@ services:
       - db-mongo
   db-mongo:
     image: mongo
+    restart: unless-stopped
     command: --smallfiles
     ports:
       - "27017:27017"
