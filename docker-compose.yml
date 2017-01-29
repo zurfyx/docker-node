@@ -5,7 +5,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/usr/src/app
+      - .:/app
   db-mongo:
     image: mongo
     command: --smallfiles

@@ -1,9 +1,9 @@
 FROM node:boron
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
-COPY . /usr/src/app
+COPY . /app
 RUN npm install
 
 EXPOSE 3000
